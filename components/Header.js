@@ -20,7 +20,7 @@ export function Header() {
             </Link>
           </li>
 
-          <li>
+          {/* <li>
             <Link
               href="/"
               legacyBehavior
@@ -28,7 +28,7 @@ export function Header() {
             >
               <a className="text-sm font-bold">Search</a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
