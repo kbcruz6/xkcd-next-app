@@ -25,9 +25,9 @@ export default function Comic({
       </Head>
 
       <Layout>
-        <section className="max-w-lg m-auto">
+        <section className="max-w-lg m-auto ">
           <h1 className="font-bold text-center m-4 text-xl">{title}</h1>
-          <div className="max-w-xs m-auto mb-4">
+          <div className="max-w-xs m-auto mb-4 ">
             <Image
               className="m-auto"
               width={width}

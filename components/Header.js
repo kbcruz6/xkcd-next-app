@@ -4,7 +4,7 @@ export function Header() {
   return (
     <header className="flex justify-between items-center p-4 max-w-xl m-auto">
       <Link href="/">
-        <h1 className="font-bold">
+        <h1 className="font-bold hover:text-gray-400">
           next<span className="font-light"> xkcd</span>
         </h1>
       </Link>
@@ -16,7 +16,7 @@ export function Header() {
               legacyBehavior
               className="transition hover:opacity-80"
             >
-              <a className="text-sm font-bold">Home</a>
+              <a className="text-sm font-bold hover:text-gray-400">Home</a>
             </Link>
           </li>
 

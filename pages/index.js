@@ -15,7 +15,7 @@ export default function Home({ latestComics }) {
 
       <Layout>
         <h2 className="text-3xl font-bold text-center mb-10">Latest Comics</h2>
-        <section className="grid grid-cols-1 gap-2 max-w-md m-auto sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-2 items-center max-w-md m-auto sm:grid-cols-2 md:grid-cols-3 align-middle">
           {latestComics.map((comic) => {
             return (
               <Link href={`/comic/${comic.id}`} key={comic.id} legacyBehavior>
@@ -33,7 +33,7 @@ export default function Home({ latestComics }) {
               </Link>
             );
           })}
-        </section>
+        </div>
       </Layout>
     </>
   );
@@ -41,7 +41,7 @@ export default function Home({ latestComics }) {
 
 export async function getStaticProps(context) {
   const files = await fs.readdir("./comics");
-  const latestComicsFiles = files.slice(-8, files.length);
+  const latestComicsFiles = files.slice(-9, files.length);
 
   const promisesReadFiles = latestComicsFiles.map(async (file) => {
     const content = await fs.readFile(`./comics/${file}`, "utf8");
