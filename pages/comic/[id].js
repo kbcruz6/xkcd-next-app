@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import { readFile, readdir, stat } from "fs/promises";
-import { Link } from "@nextui-org/react";
-import { basename } from "path";
+import Link from "next/link";
 import { Layout } from "components/Layout.js";
+import { readFile, readdir, stat } from "fs/promises";
+import { basename } from "path";
 
 export default function Comic({
   img,
@@ -39,18 +39,14 @@ export default function Comic({
           <p>{alt}</p>
           <div className="flex justify-between mt-4 font-bold">
             {hasPrev && (
-              <Link href={`/comic/${prevId}`}>
-                <button className="btn shadow-[0_5px_0_rgb(0,0,0)] hover:shadow-[0_2px_0px_rgb(0,0,0)] text-black bg-gray-200 ease-out hover:translate-y-1 transition-all rounded pr-2 pl-2">
-                  ◀ Previous
-                </button>
+              <Link href={`/comic/${prevId}`} className="text-gray-600">
+                ◀ Previous
               </Link>
             )}
 
             {hasNext && (
               <Link className="text-gray-600" href={`/comic/${nextId}`}>
-                <button className="btn shadow-[0_5px_0_rgb(0,0,0)] hover:shadow-[0_2px_0px_rgb(0,0,0)] text-black bg-gray-200 ease-out hover:translate-y-1 transition-all rounded pr-2 pl-2">
-                  Next ▶
-                </button>
+                Next ▶
               </Link>
             )}
           </div>
@@ -104,4 +100,17 @@ export async function getStaticProps({ params }) {
       nextId,
     },
   };
+}
+
+{
+  /* <button className="btn shadow-[0_5px_0_rgb(0,0,0)] hover:shadow-[0_2px_0px_rgb(0,0,0)] text-black bg-gray-200 ease-out hover:translate-y-1 transition-all rounded pr-2 pl-2"> 
+                ◀ Previous
+                </button> */
+}
+
+{
+  /* <button className="btn shadow-[0_5px_0_rgb(0,0,0)] hover:shadow-[0_2px_0px_rgb(0,0,0)] text-black bg-gray-200 ease-out hover:translate-y-1 transition-all rounded pr-2 pl-2"> 
+                Next ▶
+
+</button> */
 }
