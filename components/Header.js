@@ -16,7 +16,14 @@ export function Header() {
               legacyBehavior
               className="transition hover:opacity-80"
             >
-              <a className="text-sm font-bold hover:text-gray-400">Home</a>
+              <a>
+                <p className=" relative group">
+                  <span className="text-sm font-bold hover:text-gray-400">
+                    Home
+                  </span>
+                  <span className="absolute -bottom-0 left-0 w-0 h-1 bg-blue-600 transition-all group-hover:w-full"></span>
+                </p>
+              </a>
             </Link>
           </li>
 
