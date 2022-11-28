@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Header } from "../../components/Header.js";
 import { readFile, readdir, stat } from "fs/promises";
 import { Link } from "@nextui-org/react";
 import { basename } from "path";
+import { Layout } from "components/Layout.js";
 
 export default function Comic({
   img,
@@ -24,31 +24,33 @@ export default function Comic({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-
-      <main>
+      <Layout>
         <section className="max-w-lg m-auto">
-          <h1 className="font-bold text-center m-3">{title}</h1>
-          <Image
-            className="m-auto"
-            width={width}
-            height={height}
-            src={img}
-            alt={alt}
-          />
-          <p className="text-center m-3">{alt}</p>
-          {hasPrev && (
-            <Link className="text-gray-600" href={`/comic/${prevId}`}>
-              Previous
-            </Link>
-          )}
-          {hasNext && (
-            <Link className="text-gray-600" href={`/comic/${nextId}`}>
-              Next
-            </Link>
-          )}
+          <h1 className="font-bold text-center m-4 text-xl">{title}</h1>
+          <div className="max-w-xs m-auto mb-4">
+            <Image
+              className="m-auto"
+              width={width}
+              height={height}
+              src={img}
+              alt={alt}
+            />
+          </div>
+          <p>{alt}</p>
+          <div className="flex justify-between mt-4 font-bold">
+            {hasPrev && (
+              <Link className="text-gray-600" href={`/comic/${prevId}`}>
+                ◀ Previous
+              </Link>
+            )}
+            {hasNext && (
+              <Link className="text-gray-600" href={`/comic/${nextId}`}>
+                Next ▶
+              </Link>
+            )}
+          </div>
         </section>
-      </main>
+      </Layout>
     </>
   );
 }
