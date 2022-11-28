@@ -26,16 +26,6 @@ export function Header() {
               </a>
             </Link>
           </li>
-
-          {/* <li>
-            <Link
-              href="/"
-              legacyBehavior
-              className="transition hover:opacity-80"
-            >
-              <a className="text-sm font-bold">Search</a>
-            </Link>
-          </li> */}
         </ul>
       </nav>
     </header>
